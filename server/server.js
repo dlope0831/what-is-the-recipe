@@ -3,7 +3,7 @@ const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
-const routes = require('./routes');
+// const routes = require('./routes');
 const { typeDefs, resolvers } = require("./schemas");
 
 const app = express();
@@ -37,7 +37,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
  db.once('open', () => {
   app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
-});
+  });
 };
 
 startApolloServer(typeDefs, resolvers);

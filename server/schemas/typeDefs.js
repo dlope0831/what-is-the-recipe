@@ -18,6 +18,14 @@ const typeDefs = gql`
     image: String
     link: String
   }
+  input RecipeInfo {
+    authors: [String]
+    description: String
+    title: String
+    recipeId: String
+    image: String
+    link: String
+  }
 
   type Auth {
     token: ID!
