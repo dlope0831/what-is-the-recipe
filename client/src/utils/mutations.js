@@ -10,7 +10,7 @@ export const LOGIN_USER = gql`
       }
     }
   }
-`
+`;
 
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
@@ -18,11 +18,10 @@ export const ADD_USER = gql`
       token
       user {
         _id
-        username
       }
     }
   }
-`
+`;
 
 export const SAVE_RECIPE = gql`
   mutation saveRecipe($input: recipeInfo!) {
@@ -31,7 +30,7 @@ export const SAVE_RECIPE = gql`
       username
       email
       recipeCount
-      recipeInfo {
+      savedRecipes {
         recipeId
         authors
         description
@@ -41,7 +40,7 @@ export const SAVE_RECIPE = gql`
       }
     }
   }
-`
+`;
 
 export const REMOVE_RECIPE = gql`
   mutation removeRecipe($recipeId: ID!) {
@@ -60,4 +59,4 @@ export const REMOVE_RECIPE = gql`
       }
     }
   }
-`
+`;
