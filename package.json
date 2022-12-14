@@ -19,7 +19,7 @@
     "concurrently": "^7.6.0"
   },
   "devDependencies": {
-    "eslint": "^8.25.0",
+    "eslint": "^6.6.0",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1"
   }
