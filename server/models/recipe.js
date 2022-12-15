@@ -2,13 +2,13 @@ import { Schema, model } from 'mongoose';
 
 const recipeTrendSchema = new Schema({
   
-  // 'searchTerms':{
-  //   type: String,
-  //   required: true,
-  //   unique: false
-  // },
+  'searchTerms':{
+    type: String,
+    required: true,
+    unique: false
+  },
   'rank': {
-      type: Number,
+      type: Number
   },
   'title': {
       type: String
