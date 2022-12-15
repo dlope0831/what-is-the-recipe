@@ -1,9 +1,3 @@
-import React, { useState } from "react";
-import './App.css';
-import 'semantic-ui-css/semantic.min.css'  
-import Navbar from './components/Navbar'
-
-
 import React from "react"
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom"
 import {
@@ -14,7 +8,7 @@ import {
 } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import "semantic-ui-css/semantic.min.css"
-
+import Nabvar from './components/Navbar'
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
@@ -41,14 +35,10 @@ const client = new ApolloClient({
 });
 
 function App() {
-  return(
- <div>
-  <Navbar/>
-  </div>
-);
   return (
     <ApolloProvider client={client}>
       <Router>
+      <Nabvar/>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -60,7 +50,6 @@ function App() {
     </ApolloProvider>
   )
 }
-export default App;
 
 
 export default App
