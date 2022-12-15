@@ -21,6 +21,7 @@ function Signup(props) {
     })
     const token = mutationResponse.data.addUser.token
     Auth.login(token)
+    
   }
 
   const handleChange = (event) => {
@@ -35,7 +36,7 @@ function Signup(props) {
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="pink" textAlign="center">
-          Sign up for (site name)
+          Sign up
         </Header>
         <Form onSubmit={handleFormSubmit}>
           <Form.Group widths="equal">

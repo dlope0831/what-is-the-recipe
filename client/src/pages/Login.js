@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import { Button, Form, Grid, Header, Message, Segment } from "semantic-ui-react"
 import { useMutation } from "@apollo/client"
-import { LOGIN } from "../utils/mutations"
+import { LOGIN_USER } from "../utils/mutations"
 import Auth from "../utils/auth"
 // import { Link } from "react-router-dom"
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" })
-  const [login, { error }] = useMutation(LOGIN)
+  const [login, { error }] = useMutation(LOGIN_USER)
 
   const handleFormSubmit = async (event) => {
     event.preventDefault()
