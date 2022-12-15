@@ -1,23 +1,32 @@
-const { Schema } = require('mongoose');
+import { Schema, model } from 'mongoose';
 
-const recipeSchema = new Schema({
+const recipeTrendSchema = new Schema({
   
-    recipeName: {
-        type: String
-    },
-    createdBy: {
+  // 'searchTerms':{
+  //   type: String,
+  //   required: true,
+  //   unique: false
+  // },
+  'rank': {
+      type: Number,
+  },
+  'title': {
       type: String
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now
-    },
-    size: {
-      type: String,
-      default: 'Large'
-    },
-    ingredients: []
-  });
+  },
+  'snippet': {
+      type: String
+  },
+  'displayLink': {
+      type: String
+  },
+  'link': {
+      type: String
+  },
+  'queryTime': {
+      type: String
+  }
+});
 
 
-module.exports = recipeSchema;
+export const RecipeTrend = model('RecipeTrend', recipeTrendSchema);
+
