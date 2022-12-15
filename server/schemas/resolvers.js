@@ -40,12 +40,12 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
           },
-          saveRecipe: async (parent, {recipeData}, context) => {
+          saveRecipe: async (parent, {recipeInfo}, context) => {
             if (context.user) {
       
               const updatedInfo = await User.findByIdAndUpdate(
                 { _id: context.user._id },
-                { $push: { savedRecipes: recipeData} },
+                { $push: { savedRecipes: recipeInfo} },
                 { new: true }
               );
               return updatedInfo;
