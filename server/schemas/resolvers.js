@@ -3,7 +3,7 @@ const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 
-const reslovers = {
+const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
@@ -70,4 +70,4 @@ const reslovers = {
 
 
 
-module.exports= reslovers;
+module.exports= resolvers;

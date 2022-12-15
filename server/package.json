@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js"
@@ -17,10 +18,10 @@
     "graphql": "^15.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.10",
-    "semantic-ui-css": "^2.5.0",
-    "semantic-ui-react": "^2.1.4"
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "d3": "^7.7.0"
   }
 }
