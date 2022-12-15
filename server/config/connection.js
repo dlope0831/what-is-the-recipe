@@ -1,16 +1,10 @@
-import mongoose from 'mongoose';
-import * as dotenv from 'dotenv';
+const mongoose = require('mongoose');
 
-dotenv.config("..")
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/what-is-the-recipe', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/what-is-the-recipe',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false,
-    },
-  );
-
-  export const conn =  mongoose.connection;
+module.exports = mongoose.connection;
