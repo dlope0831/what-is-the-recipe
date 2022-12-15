@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 // import { Link } from "react-router-dom"
-import { Button, Form, Input,Grid, Header, Message  } from "semantic-ui-react"
+import { Button, Form, Input, Grid, Header, Message } from "semantic-ui-react"
 import { useMutation } from "@apollo/client"
 import Auth from "../utils/auth"
 import { ADD_USER } from "../utils/mutations"
@@ -17,11 +17,11 @@ function Signup(props) {
         password: formState.password,
         firstName: formState.firstName,
         lastName: formState.lastName,
+        username: formState.username
       },
     })
     const token = mutationResponse.data.addUser.token
     Auth.login(token)
-    
   }
 
   const handleChange = (event) => {
@@ -44,6 +44,7 @@ function Signup(props) {
               id="form-input-control-first-name"
               control={Input}
               label="First name"
+              name="firstName"
               placeholder="First name"
               onChange={handleChange}
             />
@@ -51,22 +52,34 @@ function Signup(props) {
               id="form-input-control-last-name"
               control={Input}
               label="Last name"
+              name="lastName"
               placeholder="Last name"
               onChange={handleChange}
             />
           </Form.Group>
           <Form.Field
+            id="form-input-control-error-username"
+            control={Input}
+            label="Username"
+            name="username"
+            placeholder="user name"
+            onChange={handleChange}
+          />
+          <Form.Field
             id="form-input-control-error-email"
             control={Input}
             label="Email"
+            name="email"
             placeholder="joe@schmoe.com"
             onChange={handleChange}
           />
+
           <Form.Input
             fluid
             icon="lock"
             iconPosition="left"
             placeholder="Password"
+            name="password"
             type="password"
             onChange={handleChange}
           />
