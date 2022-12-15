@@ -45,3 +45,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// put token back on auth

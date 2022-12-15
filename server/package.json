@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "watch": "nodemon server.js"
   },
   "keywords": [],
@@ -17,8 +17,8 @@
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.10",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "mongoose": "^5.9.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.3",
