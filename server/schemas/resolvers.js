@@ -3,7 +3,7 @@ const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 
-const reslovers = {
+const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
@@ -40,12 +40,12 @@ const reslovers = {
             const token = signToken(user);
             return { token, user };
           },
-          saveRecipe: async (parent, {recipeData}, context) => {
+          saveRecipe: async (parent, {recipeInfo}, context) => {
             if (context.user) {
       
               const updatedInfo = await User.findByIdAndUpdate(
                 { _id: context.user._id },
-                { $push: { savedRecipes: recipeData} },
+                { $push: { savedRecipes: recipeInfo} },
                 { new: true }
               );
               return updatedInfo;
@@ -70,4 +70,4 @@ const reslovers = {
 
 
 
-module.exports= reslovers;
+module.exports= resolvers;

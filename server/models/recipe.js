@@ -2,30 +2,31 @@ import { Schema, model } from 'mongoose';
 
 const recipeTrendSchema = new Schema({
   
-  'searchTerms':{
+  authors: [
+    {
+      type: String,
+    },
+  ],
+  description: {
     type: String,
     required: true,
-    unique: false
   },
-  'rank': {
-      type: Number
+  // saved recipe id from tiktok
+  recipeId: {
+    type: String,
+    required: true,
   },
-  'title': {
-      type: String
+  image: {
+    type: String,
   },
-  'snippet': {
-      type: String
+  link: {
+    type: String,
   },
-  'displayLink': {
-      type: String
+  title: {
+    type: String,
+    required: true,
   },
-  'link': {
-      type: String
-  },
-  'queryTime': {
-      type: String
-  }
-});
+  });
 
 
 export const RecipeTrend = model('RecipeTrend', recipeTrendSchema);
