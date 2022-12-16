@@ -1,6 +1,6 @@
-import { Schema, model } from 'mongoose';
+const { Schema } = require('mongoose');
 
-const recipeTrendSchema = new Schema({
+const recipeSchema = new Schema({
   
   authors: [
     {
@@ -29,5 +29,4 @@ const recipeTrendSchema = new Schema({
   });
 
 
-export const RecipeTrend = model('RecipeTrend', recipeTrendSchema);
-
+module.exports = recipeSchema;
