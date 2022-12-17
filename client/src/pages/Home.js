@@ -9,11 +9,10 @@ import { Header, Image, Grid } from "semantic-ui-react"
 function Home() {
   return (
     <div>
-      <Header as="h2" inverted textAlign="center" color= "blue">
+     <Header as="h2" inverted textAlign="center" color= "blue">
         Home <br/>
-        <a href="/login">Login </a>
-        <a href="/signup">Signup</a>
-      </Header>
+   
+     </Header>
       <Grid text style={{ marginTop: "7em" }}>
         <Grid.Row columns={5}>
           <Grid.Column>

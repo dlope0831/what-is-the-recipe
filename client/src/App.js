@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter as Router, Routes, Route  } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,7 +8,7 @@ import {
 } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import "semantic-ui-css/semantic.min.css"
-import Nabvar from './components/Navbar'
+import Sidebar from './components/Navbar'
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
@@ -38,7 +38,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <Nabvar/>
+    <Sidebar/>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />

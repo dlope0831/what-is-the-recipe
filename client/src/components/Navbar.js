@@ -1,14 +1,13 @@
 import React  from 'react';
-
-
+import { Button} from 'semantic-ui-react'
 const Sidebar = () => {
     return(
         <>
-<div class="ui secondary  menu">
-  <a class="active item">
+<div class="ui secondary menu" >
+  <a href='/' class="active item">
     Home
   </a>
-  <a class="item">
+  <a class="item" color='pink'>
    Recipes
   </a>
   <a class="item">
@@ -16,14 +15,13 @@ const Sidebar = () => {
   </a>
   <div class="right menu">
     <div class="item">
-      <div class="ui icon input">
-        <input type="text" placeholder="Search..."/>
-        <i class="search link icon"></i>
-      </div>
     </div>
-    <a class="ui item">
-      Logout
+    <a href='/login' class="ui item">
+      Login
     </a>
+   <Button>
+        <a href="/signup">Sign Up</a>
+        </Button>
   </div>
 </div>
 </>
