@@ -5,6 +5,14 @@ const recipeSchema = require('./Recipe');
 
 const userSchema = new Schema(
     {
+      firstName: {
+        type: String,
+        required: true,
+      },
+      lastName: {
+        type: String,
+        required: true,
+      },
       username: {
         type: String,
         required: true,
@@ -20,8 +28,8 @@ const userSchema = new Schema(
         type: String,
         required: true,
       },
-      // set savedBooks to be an array of data that adheres to the bookSchema
-      recipeInfo: [recipeSchema],
+      // set savedRecipes to be an array of data that adheres to the recipeSchema
+      savedRecipes: [recipeSchema],
     },
     // set this to use virtual below
     {
@@ -46,9 +54,9 @@ userSchema.pre('save', async function (next) {
     return bcrypt.compare(password, this.password);
   };
   
-  // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+  // when we query a user, we'll also get another field called `recipeCount` with the number of saved recipes we have
   userSchema.virtual('recipeCount').get(function () {
-    return this.savedBooks.length;
+    return this.savedRecipes.length;
   });
   
   const User = model('User', userSchema);

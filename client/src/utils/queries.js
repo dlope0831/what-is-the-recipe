@@ -7,7 +7,7 @@ export const GET_ME = gql`
       username
       email
       recipeCount
-      recipeInfo {
+      savedRecipes {
         recipeId
         authors
         description

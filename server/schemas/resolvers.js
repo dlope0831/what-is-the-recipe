@@ -40,27 +40,44 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
           },
-          saveRecipe: async (parent, {recipeInfo}, context) => {
+
+          // for testing only======
+          addRecipe: async (parent, args, context) => {
             if (context.user) {
-      
-              const updatedInfo = await User.findByIdAndUpdate(
+              const recipe = await Recipe.creat({ ...args, _id: context.user._id});
+
+              await User.findByIdAndUpdate(
                 { _id: context.user._id },
-                { $push: { savedRecipes: recipeInfo} },
+                { $push: { recipes: recipe._id } },
                 { new: true }
               );
-              return updatedInfo;
+              return recipe;
+            }
+          },
+          //==========
+
+
+          saveRecipe: async (parent, { recipeInfo }, context) => {
+            if (context.user) {
+      
+              const updatedUser = await User.findByIdAndUpdate(
+                { _id: context.user._id },
+                { $addToSet: { savedRecipes: recipeInfo } },
+                { new: true }
+              );
+              return updatedUser;
             }
       
             throw new AuthenticationError('You need to be logged in!');
           },
-          removeRecipe: async (parent, {recipeId}, context) =>{
+          removeRecipe: async (parent, { recipeId }, context) =>{
             if (context.user) {
-                const updatedInfo = await User.findByIdAndUpdate(
+                const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedRecipes: {recipeId}} },
+                    { $pull: { savedRecipes: { recipeId } } },
                     { new: true }
                   );
-                  return updatedInfo;
+                  return updatedUser;
             }
             throw new AuthenticationError('You need to be logged in!');
           }

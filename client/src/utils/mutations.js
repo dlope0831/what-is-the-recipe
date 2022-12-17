@@ -1,5 +1,10 @@
 import { gql } from "@apollo/client"
 
+// for testing ======
+// import React from 'react';
+// import { useMutation } from '@apollo/react-hooks';
+
+
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -53,6 +58,22 @@ export const SAVE_RECIPE = gql`
     }
   }
 `;
+
+// attempted mock test
+
+// function SaveRecipeButton() {
+//   const [saveRecipe] = useMutation(SAVE_RECIPE, {
+//     variables: {
+//       title: 'new recipe',
+//       author: 'me'
+//     }
+//   });
+//   return (
+//     <button onClick={saveRecipe}>Save Recipe</button>
+//   )
+// }
+
+
 
 export const REMOVE_RECIPE = gql`
   mutation removeRecipe($recipeId: ID!) {

@@ -11,7 +11,6 @@ const recipeSchema = new Schema({
     type: String,
     required: true,
   },
-  // saved recipe id from tiktok
   recipeId: {
     type: String,
     required: true,
