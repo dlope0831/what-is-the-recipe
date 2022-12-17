@@ -60,3 +60,5 @@ export const searchYoutubeShorts = (query) => {
 // const httpLink = createHttpLink({
 //   uri: "youtube.googleapis.com/youtube/v3/search?key=" + process.env.YOUTUBE_TOKEN +"/graphql",
 // });
+
+// https://www.youtube.com/watch?v=n5Op1CIdg4Y

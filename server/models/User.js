@@ -20,7 +20,6 @@ const userSchema = new Schema(
         type: String,
         required: true,
       },
-      // set savedBooks to be an array of data that adheres to the bookSchema
       recipeInfo: [recipeSchema],
     },
     // set this to use virtual below
@@ -46,9 +45,9 @@ userSchema.pre('save', async function (next) {
     return bcrypt.compare(password, this.password);
   };
   
-  // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+ 
   userSchema.virtual('recipeCount').get(function () {
-    return this.savedBooks.length;
+    return this.recipeInfo.length;
   });
   
   const User = model('User', userSchema);
