@@ -17,4 +17,18 @@ export const GET_ME = gql`
       }
     }
   }
-`
+`;
+
+export const QUERY_RECIPE = gql `
+{
+  recipe {
+    _id
+    title
+    description
+    creator
+    search {
+      name
+    }
+  }
+}
+`;
