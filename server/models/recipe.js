@@ -2,27 +2,27 @@ const { Schema } = require('mongoose');
 
 const recipeSchema = new Schema({
   
-  authors: [
+  part: [
     {
       type: String,
     },
   ],
-  description: {
+  q: {
     type: String,
     required: true,
   },
   // saved recipe id from tiktok
-  recipeId: {
+  maxResults: {
     type: String,
     required: true,
   },
-  image: {
+  order: {
     type: String,
   },
-  link: {
+  relevanceLanguage: {
     type: String,
   },
-  title: {
+  topicId: {
     type: String,
     required: true,
   },
