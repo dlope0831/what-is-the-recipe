@@ -43,12 +43,10 @@ export const SAVE_RECIPE = gql`
       email
       recipeCount
       savedRecipes {
-        recipeId
-        authors
-        description
         title
-        image
-        link
+        description
+        id
+        thumbnails
       }
     }
   }
@@ -62,12 +60,10 @@ export const REMOVE_RECIPE = gql`
       email
       recipeCount
       savedRecipes {
-        recipeId
-        authors
-        description
         title
-        image
-        link
+        description
+        id
+        thumbnails
       }
     }
   }

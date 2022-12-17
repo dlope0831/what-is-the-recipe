@@ -8,28 +8,24 @@ export const GET_ME = gql`
       email
       recipeCount
       recipeInfo {
-        recipeId
-        authors
-        description
         title
-        image
-        link
+        description
+        id
+        thumbnails
       }
     }
   }
 `;
 
-// export const QUERY_BOOK = gql`
-//   query book($id: ID!) {
-//     book(_id: $id) {
-//         book {
-//             _id
-//             authors
-//             description
-//             title
-//             image
-//             link
-//         }
-//     }
-//   }
-// `;
+export const QUERY_RECIPE = gql`
+  query recipe($id: ID!) {
+    recipe(_id: $id) {
+        recipe {
+          title
+          description
+          id
+          thumbnails
+        }
+    }
+  }
+`;

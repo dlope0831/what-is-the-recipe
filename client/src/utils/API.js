@@ -28,17 +28,16 @@ export const loginUser = (userData) => {
   });
 };
 
-// save book data for a logged in user
-// export const saveBook = (bookData, token) => {
-//   return fetch('/api/users', {
-//     method: 'PUT',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       authorization: `Bearer ${token}`,
-//     },
-//     body: JSON.stringify(bookData),
-//   });
-// };
+export const addRecipe = (recipeData, token) => {
+  return fetch('/api/users', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(recipeData),
+  });
+};
 
 // remove saved book data for a logged in user
 // export const deleteBook = (bookId, token) => {
@@ -52,7 +51,30 @@ export const loginUser = (userData) => {
 
 
 export const searchYoutubeShorts = (query) => {
-  return fetch(`https://www.youtube.googleapis.com/youtube/v3/search?key?q=${query}`);
+  return google.youtube('v3').videos.list({
+    "key": process.env.YOUTUBE_TOKEN,
+    "part": [
+      "snippet"
+    ],
+    "q": `recipes + ${query}`,
+    "chart": "mostPopular",
+    "maxResults": 10,
+    "order": "viewCount",
+    "relevanceLanguage": "en",
+    "topicId": "/m/02wbm",
+    "type": [
+      "video"
+    ],
+    "videoCategoryId": "22",
+    "videoDuration": "short"
+  }).then((response) => {
+  const { data } = response;
+  // data.items.forEach((item) => {
+      // console.log(`Title: ${item.snippet.title}\nDescription: ${item.snippet.description}\n Creator: ${item.snippet.channelId} `)
+
+  // })
+  return data.items;
+}).catch((err) => console.log(err))
 };
 
 // require('dotenv').config()

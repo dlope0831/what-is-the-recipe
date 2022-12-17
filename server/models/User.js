@@ -20,7 +20,7 @@ const userSchema = new Schema(
         type: String,
         required: true,
       },
-      recipeInfo: [recipeSchema],
+      savedRecipes: [recipeSchema],
     },
     // set this to use virtual below
     {
@@ -47,7 +47,7 @@ userSchema.pre('save', async function (next) {
   
  
   userSchema.virtual('recipeCount').get(function () {
-    return this.recipeInfo.length;
+    return this.savedRecipes.length;
   });
   
   const User = model('User', userSchema);
