@@ -17,7 +17,7 @@ function Login(props) {
       })
       const token = mutationResponse.data.login.token
       Auth.login(token)
-      console.log(token);
+    
     } catch (e) {
       console.log(e)
     }
@@ -43,6 +43,7 @@ function Login(props) {
               fluid
               icon="user"
               iconPosition="left"
+              name="email"
               placeholder="E-mail address"
               onChange={handleChange}
             />
@@ -50,6 +51,7 @@ function Login(props) {
               fluid
               icon="lock"
               iconPosition="left"
+              name="password"
               placeholder="Password"
               type="password"
               onChange={handleChange}
