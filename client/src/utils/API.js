@@ -39,15 +39,15 @@ export const addRecipe = (recipeData, token) => {
   });
 };
 
-// remove saved book data for a logged in user
-// export const deleteBook = (bookId, token) => {
-//   return fetch(`/api/users/books/${bookId}`, {
-//     method: 'DELETE',
-//     headers: {
-//       authorization: `Bearer ${token}`,
-//     },
-//   });
-// };
+
+export const deleteRecipe = (recipeId, token) => {
+  return fetch(`/api/users/recipes/${recipeId}`, {
+    method: 'DELETE',
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
+};
 
 
 export const searchYoutubeShorts = (query) => {
