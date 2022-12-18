@@ -30,6 +30,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    token: ID!
     me: User
   }
 
