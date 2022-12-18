@@ -13,7 +13,8 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Recipes from "./pages/Recipes"
+import Saved from './pages/Savedrecipes'
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -38,12 +39,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-    <Sidebar className={StyleSheet.nav}/>
+    <Sidebar/>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/savedrecipes" element={<Saved />} />
           </Routes>
           </div>
       </Router>
