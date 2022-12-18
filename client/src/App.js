@@ -12,7 +12,7 @@ import Sidebar from './components/Navbar'
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
-// import { StoreProvider } from "./utils/GlobalState";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const httpLink = createHttpLink({
@@ -38,7 +38,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-    <Sidebar/>
+    <Sidebar className={StyleSheet.nav}/>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
