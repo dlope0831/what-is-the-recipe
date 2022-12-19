@@ -9,9 +9,12 @@ import italian from "../../assets/italian.jpg"
 import spanish from "../../assets/spanish.jpg"
 
 function Computer() {
+  const handleClick = (event) => {
+    console.log(event.target.alt)
+  }
   return (
     <>
-      <Grid text style={{ marginTop: "7em" }} columns={5}>
+      <Grid text style={{ padding: '55px' }} columns={5}>
         <Grid.Row  only="computer">
           <Grid.Column>
             <Image
@@ -22,9 +25,11 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='spanish'
               src={spanish}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
           <Grid.Column>
@@ -36,9 +41,11 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='italian'
               src={italian}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
           <Grid.Column>
@@ -50,9 +57,11 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='indian'
               src={indian}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
           <Grid.Column>
@@ -64,9 +73,11 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='east asian'
               src={asian}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
           <Grid.Column>
@@ -78,9 +89,11 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='caribbean'
               src={caribbean}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
         </Grid.Row>

@@ -8,6 +8,9 @@ import italian from "../../assets/italian.jpg"
 import spanish from "../../assets/spanish.jpg"
 
 function Tablet() {
+  const handleClick = (event) => {
+    console.log(event.target.alt)
+  }
   return (
     <div>
       <Grid container columns={2} stackable>
@@ -21,9 +24,11 @@ function Tablet() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='spanish'
               src={spanish}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
 
@@ -36,9 +41,11 @@ function Tablet() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='italian'
               src={italian}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
 
@@ -51,9 +58,11 @@ function Tablet() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='breakfast'
               src={breakfast}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
           <Grid.Column>
@@ -65,9 +74,11 @@ function Tablet() {
                 icon: "utensils",
                 ribbon: true,
               }}
+              alt='vegan'
               src={vegan}
               size="medium"
               rounded
+              onClick={handleClick}
             />
           </Grid.Column>
         </Grid.Row>
