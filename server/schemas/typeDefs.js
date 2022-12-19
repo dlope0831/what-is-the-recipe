@@ -1,8 +1,26 @@
+
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+
+type Query {
+  me: User
+}
+
+type Mutation {
+  addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
+  login(email: String!, password: String!): Auth
+  
+  addRecipe(input: recipeInfo!): Recipe
+  
+  saveRecipe(input: recipeInfo!): User
+  removeRecipe(recipeId: ID!): User
+}
+
   type User {
     _id: ID
+    firstName: String
+    lastName: String
     username: String
     email: String 
     recipeCount: Int
@@ -44,4 +62,4 @@ const typeDefs = gql`
 
 module.exports = typeDefs;
 
-// put token back on auth
+// remove addRecipe mutation (for testing only)
