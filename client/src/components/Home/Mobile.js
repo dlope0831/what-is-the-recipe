@@ -1,8 +1,8 @@
 import React from 'react'
 
-import breakfast from '../assets/breakfast.jpg'
-import dessert from '../assets/dessert.jpg'
-import vegan from '../assets/vegan.jpg'
+import breakfast from '../../assets/breakfast.jpg'
+import dessert from '../../assets/dessert.jpg'
+import vegan from '../../assets/vegan.jpg'
 import { Image, Grid} from "semantic-ui-react"
 
 
@@ -14,42 +14,42 @@ function Mobile() {
    <Grid.Column>
      <Image
        label={{
-         size: "small",
+         size: "huge",
          color: "teal",
          content: "Breakfast",
          icon: "utensils",
          ribbon: true,
        }}
        src={breakfast}
-       size="small"
+       size="huge"
        rounded
      />
    </Grid.Column>
    <Grid.Column >
      <Image
        label={{
-         size: "small",
+         size: "huge",
          color: "pink",
          content: "Dessert",
          icon: "utensils",
          ribbon: true,
        }}
        src={dessert}
-       size="small"
+       size="huge"
        rounded
      />
    </Grid.Column>
    <Grid.Column>
      <Image
        label={{
-         size: "small",
+         size: "huge",
          color: "green",
          content: "Vegan",
          icon: "utensils",
          ribbon: true,
        }}
        src={vegan}
-       size="small"
+       size="huge"
        rounded
      />
    </Grid.Column>

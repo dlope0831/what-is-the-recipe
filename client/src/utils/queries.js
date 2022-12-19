@@ -32,3 +32,4 @@ export const QUERY_RECIPE = gql `
   }
 }
 `;
+

@@ -1,19 +1,18 @@
 import React from "react"
 
-import {Image, Grid} from "semantic-ui-react"
+import { Image, Grid } from "semantic-ui-react"
 
-import asian from "../assets/asian.jpg"
-import caribbean from "../assets/caribbean.jpg"
-import indian from "../assets/indian.jpg"
-import italian from "../assets/italian.jpg"
-import spanish from "../assets/spanish.jpg"
+import asian from "../../assets/asian.jpg"
+import caribbean from "../../assets/caribbean.jpg"
+import indian from "../../assets/indian.jpg"
+import italian from "../../assets/italian.jpg"
+import spanish from "../../assets/spanish.jpg"
 
-
-function Computer () {
-    return (
-        <div>
-<Grid text style={{ marginTop: "7em" }}>
-        <Grid.Row columns={5} only="computer">
+function Computer() {
+  return (
+    <div>
+      <Grid text style={{ marginTop: "7em" }} columns={5}>
+        <Grid.Row  only="computer">
           <Grid.Column>
             <Image
               label={{
@@ -86,8 +85,8 @@ function Computer () {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      </div>
-    )
-};
+    </div>
+  )
+}
 
-export default Computer;
+export default Computer

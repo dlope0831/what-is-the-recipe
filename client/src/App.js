@@ -13,6 +13,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Footer from "./pages/Footer"
+// import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 
 const httpLink = createHttpLink({
@@ -38,16 +39,16 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <Nabvar/>
+        <Nabvar/>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            {/* <Route path="/donate" element={<Donation />} /> */}
           </Routes>
         </div>
         <footer>
-          
           <Footer />
         </footer>
       </Router>
