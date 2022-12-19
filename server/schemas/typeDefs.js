@@ -49,6 +49,23 @@ type Mutation {
     token: ID!
     user: User
   }
+<<<<<<< HEAD
+=======
+
+
+
+  type Query {
+    me: User
+  }
+
+
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    saveRecipe(input: recipeInfo!): User
+    removeRecipe(recipeId: ID!): User
+  }
+>>>>>>> c0b9b47c261db0adc88c828466b37ecc27bb2da3
 `;
 
 module.exports = typeDefs;
