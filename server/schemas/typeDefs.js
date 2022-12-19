@@ -1,8 +1,26 @@
+
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+
+type Query {
+  me: User
+}
+
+type Mutation {
+  addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
+  login(email: String!, password: String!): Auth
+  
+  addRecipe(input: recipeInfo!): Recipe
+  
+  saveRecipe(input: recipeInfo!): User
+  removeRecipe(recipeId: ID!): User
+}
+
   type User {
     _id: ID
+    firstName: String
+    lastName: String
     username: String
     email: String 
     recipeCount: Int
@@ -10,21 +28,17 @@ const typeDefs = gql`
   }
 
   type Recipe {
-    recipeId: String!
-    authors: [String]
-    description: String
-    title: String
-    image: String
-    link: String
+    title: String!
+    description: String!
+    id: String!
+    thumbnails: String!
   }
 
   input recipeInfo {
-    authors: [String]
-    description: String
-    title: String
-    recipeId: String
-    image: String
-    link: String
+    title: String!
+    description: String!
+    id: String!
+    thumbnails: String!
   }
 
   type Auth {
@@ -32,12 +46,9 @@ const typeDefs = gql`
     user: User
   }
 
-
-
   type Query {
     me: User
   }
-
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
@@ -48,3 +59,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// remove addRecipe mutation (for testing only)
