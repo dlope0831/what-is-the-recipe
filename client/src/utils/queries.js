@@ -7,28 +7,28 @@ export const GET_ME = gql`
       username
       email
       recipeCount
-      recipeInfo {
+      savedRecipes {
         title
         description
-        id
-        thumbnails
-      }
-    }
-  }
-`
-
-export const QUERY_RECIPE = gql`
-  query recipe($id: ID!) {
-    recipe(_id: $id) {
-      recipe {
-        title
-        description
-        id
+        recipeId
         thumbnails
       }
     }
   }
 `;
+
+// export const QUERY_RECIPE = gql`
+//   query recipe($id: ID!) {
+//     recipe(_id: $id) {
+//       recipe {
+//         title
+//         description
+//         recipeId
+//         thumbnails
+//       }
+//     }
+//   }
+// `;
 
 // export const QUERY_RECIPE = gql `
 // {
@@ -43,4 +43,3 @@ export const QUERY_RECIPE = gql`
 //   }
 // }
 // `;
-

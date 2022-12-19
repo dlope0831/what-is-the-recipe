@@ -6,25 +6,26 @@ import { Grid, Search } from "semantic-ui-react"
 
 function Home() {
   return (
-    <>
+    <div>
       <Computer />
+      <p>
         <Grid textAlign="center">
           <Grid.Row stretched>
             <Grid.Column>
               <Search
                 input={{ icon: "search", iconPosition: "left" }}
-                size="large"
+                size="medium"
                 placeholder="Search for a recipe"
-
               />
             </Grid.Column>
           </Grid.Row>
         </Grid>
-
+      </p>
+      <p>
       <Mobile />
       <Tablet />
-
-    </>
+      </p>
+    </div>
   )
 }
 
