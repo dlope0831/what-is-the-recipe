@@ -17,6 +17,7 @@ export const GET_ME = gql`
   }
 `;
 
+<<<<<<< HEAD
 export const QUERY_RECIPE = gql`
   query recipe($id: ID!) {
     recipe(_id: $id) {
@@ -29,3 +30,19 @@ export const QUERY_RECIPE = gql`
     }
   }
 `;
+=======
+export const QUERY_RECIPE = gql `
+{
+  recipe {
+    _id
+    title
+    description
+    creator
+    search {
+      name
+    }
+  }
+}
+`;
+
+>>>>>>> c0b9b47c261db0adc88c828466b37ecc27bb2da3

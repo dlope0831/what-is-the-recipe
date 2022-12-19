@@ -1,27 +1,18 @@
 import React from "react"
-<<<<<<< HEAD
-import asian from "../assets/asian.jpg"
-import caribbean from "../assets/caribbean.jpg"
-import indian from "../assets/indian.jpg"
-import italian from "../assets/italian.jpg"
-import spanish from "../assets/spanish.jpg"
-import { Header, Image, Grid } from "semantic-ui-react"
-=======
-import Computer from "../components/Home/Comp"
-import Tablet from "../components/Home/Tablet"
-import Mobile from "../components/Home/Mobile"
-import { Header, Grid, Search } from "semantic-ui-react"
->>>>>>> c0b9b47c261db0adc88c828466b37ecc27bb2da3
 
-function Home() {
+import { Image, Grid } from "semantic-ui-react"
+
+import asian from "../../assets/asian.jpg"
+import caribbean from "../../assets/caribbean.jpg"
+import indian from "../../assets/indian.jpg"
+import italian from "../../assets/italian.jpg"
+import spanish from "../../assets/spanish.jpg"
+
+function Computer() {
   return (
     <div>
-<<<<<<< HEAD
-      <Header as="h2" inverted textAlign="center" color= "blue">
-        Home <br/>
-      </Header>
-      <Grid text style={{ marginTop: "7em" }}>
-        <Grid.Row columns={5}>
+      <Grid text style={{ marginTop: "7em" }} columns={5}>
+        <Grid.Row  only="computer">
           <Grid.Column>
             <Image
               label={{
@@ -94,28 +85,8 @@ function Home() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-=======
-      <Computer />
-      <p>
-        <Grid textAlign="center">
-          <Grid.Row stretched>
-            <Grid.Column>
-              <Search
-                input={{ icon: "search", iconPosition: "left" }}
-                size="medium"
-                placeholder="Search for a recipe"
-              />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </p>
-      <p>
-      <Mobile />
-      <Tablet />
-      </p>
->>>>>>> c0b9b47c261db0adc88c828466b37ecc27bb2da3
     </div>
   )
 }
 
-export default Home
+export default Computer
