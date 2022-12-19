@@ -10,7 +10,7 @@ import spanish from "../../assets/spanish.jpg"
 
 function Computer() {
   return (
-    <div>
+    <>
       <Grid text style={{ marginTop: "7em" }} columns={5}>
         <Grid.Row  only="computer">
           <Grid.Column>
@@ -85,7 +85,7 @@ function Computer() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </div>
+    </>
   )
 }
 
