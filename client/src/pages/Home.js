@@ -7,9 +7,6 @@ import { Header, Grid, Search } from "semantic-ui-react"
 function Home() {
   return (
     <div>
-      <Header as="h2" inverted textAlign="center" color= "blue">
-        Home <br/>
-      </Header>
       <Computer />
       <p>
         <Grid textAlign="center">

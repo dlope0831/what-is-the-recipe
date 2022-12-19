@@ -8,16 +8,16 @@ import {
 } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import "semantic-ui-css/semantic.min.css"
-import Sidebar from './components/Navbar'
+import Sidebar from "./components/Navbar"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Footer from "./pages/Footer"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 import Recipes from "./pages/Recipes"
-import Saved from './pages/Savedrecipes'
+import Saved from "./pages/Savedrecipes"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -42,22 +42,15 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-<<<<<<< HEAD
-        <Nabvar/>
-=======
-    <Sidebar/>
->>>>>>> ebbd054dc0f8d8de660e14d1c915c214a6978944
+        <Sidebar />
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-<<<<<<< HEAD
             {/* <Route path="/donate" element={<Donation />} /> */}
-=======
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/savedrecipes" element={<Saved />} />
->>>>>>> ebbd054dc0f8d8de660e14d1c915c214a6978944
           </Routes>
         </div>
         <footer>
