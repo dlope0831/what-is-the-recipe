@@ -7,14 +7,25 @@ export const GET_ME = gql`
       username
       email
       recipeCount
-      savedRecipes {
-        recipeId
-        authors
-        description
+      recipeInfo {
         title
-        image
-        link
+        description
+        id
+        thumbnails
       }
     }
   }
-`;
+`
+
+export const QUERY_RECIPE = gql`
+  query recipe($id: ID!) {
+    recipe(_id: $id) {
+      recipe {
+        title
+        description
+        id
+        thumbnails
+      }
+    }
+  }
+`
