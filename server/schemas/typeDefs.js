@@ -30,7 +30,7 @@ type Mutation {
   type Recipe {
     title: String!
     description: String!
-    id: String!
+    recipeId: String!
     thumbnails: String!
   }
 
@@ -38,7 +38,7 @@ type Mutation {
   input recipeInfo {
     title: String!
     description: String!
-    id: String!
+    recipeId: String!
     thumbnails: String!
   }
 

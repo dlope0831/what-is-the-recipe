@@ -50,7 +50,7 @@ export const SAVE_RECIPE = gql`
       savedRecipes {
         title
         description
-        id
+        recipeId
         thumbnails
       }
     }
@@ -83,7 +83,7 @@ export const REMOVE_RECIPE = gql`
       savedRecipes {
         title
         description
-        id
+        recipeId
         thumbnails
       }
     }
