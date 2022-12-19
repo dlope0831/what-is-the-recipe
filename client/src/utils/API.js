@@ -28,7 +28,7 @@ export const loginUser = (userData) => {
   });
 };
 
-export const addRecipe = (recipeData, token) => {
+export const saveRecipe = (recipeData, token) => {
   return fetch('/api/users', {
     method: 'PUT',
     headers: {
@@ -49,6 +49,8 @@ export const deleteRecipe = (recipeId, token) => {
   });
 };
 
+require('dotenv').config()
+const { google } = require('googleapis');
 
 export const searchYoutubeShorts = (query) => {
   return google.youtube('v3').videos.list({
@@ -77,7 +79,7 @@ export const searchYoutubeShorts = (query) => {
 }).catch((err) => console.log(err))
 };
 
-// require('dotenv').config()
+
 
 // const httpLink = createHttpLink({
 //   uri: "youtube.googleapis.com/youtube/v3/search?key=" + process.env.YOUTUBE_TOKEN +"/graphql",
