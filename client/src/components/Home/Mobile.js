@@ -7,8 +7,12 @@ import { Image, Grid} from "semantic-ui-react"
 
 
 function Mobile() {
+  const handleClick = () => {
+
+  }
     return (
-<div>
+      
+<>
 <Grid container columns={2} stackable>
  <Grid.Row  only='mobile'>
    <Grid.Column>
@@ -55,7 +59,7 @@ function Mobile() {
    </Grid.Column>
    </Grid.Row>
    </Grid>
-</div>
+</>
     )
 }
 
