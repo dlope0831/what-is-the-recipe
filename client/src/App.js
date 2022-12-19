@@ -8,11 +8,7 @@ import {
 } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import "semantic-ui-css/semantic.min.css"
-<<<<<<< HEAD
-import Navbar from './components/Navbar'
-=======
 import Sidebar from "./components/Navbar"
->>>>>>> c0b9b47c261db0adc88c828466b37ecc27bb2da3
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
@@ -46,11 +42,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-<<<<<<< HEAD
-      <Navbar/>
-=======
         <Sidebar />
->>>>>>> c0b9b47c261db0adc88c828466b37ecc27bb2da3
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -69,9 +61,4 @@ function App() {
   )
 }
 
-<<<<<<< HEAD
-
 export default App
-=======
-export default App
->>>>>>> c0b9b47c261db0adc88c828466b37ecc27bb2da3

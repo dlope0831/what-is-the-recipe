@@ -2,7 +2,7 @@ import React from "react"
 import Computer from "../components/Home/Comp"
 import Tablet from "../components/Home/Tablet"
 import Mobile from "../components/Home/Mobile"
-import { Header, Grid, Search } from "semantic-ui-react"
+import { Grid, Search } from "semantic-ui-react"
 
 function Home() {
   return (

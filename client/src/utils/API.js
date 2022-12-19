@@ -69,18 +69,18 @@ export const getMe = (token) => {
       "videoDuration": "short"
     }).then((response) => {
     const { data } = response;
-    // data.items.forEach((item) => {
-        // console.log(`Title: ${item.snippet.title}\nDescription: ${item.snippet.description}\n Creator: ${item.snippet.channelId} `)
+    data.items.forEach((item) => {
+        console.log(`Title: ${item.snippet.title}\nDescription: ${item.snippet.description}\n Creator: ${item.snippet.channelId} `)
   
-    // })
+    })
     return data.items;
   }).catch((err) => console.log(err))
   };
   
-  // require('dotenv').config()
+  require('dotenv').config()
   
-  // const httpLink = createHttpLink({
-  //   uri: "youtube.googleapis.com/youtube/v3/search?key=" + process.env.YOUTUBE_TOKEN +"/graphql",
-  // });
+  const httpLink = createHttpLink({
+    uri: "youtube.googleapis.com/youtube/v3/search?key=" + process.env.YOUTUBE_TOKEN +"/graphql",
+  });
   
   // https://www.youtube.com/watch?v=n5Op1CIdg4Y

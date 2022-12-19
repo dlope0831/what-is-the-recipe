@@ -28,36 +28,27 @@ type Mutation {
   }
 
   type Recipe {
-    recipeId: String!
-    authors: [String]
-    description: String
-    title: String
-    image: String
-    link: String
+    title: String!
+    description: String!
+    id: String!
+    thumbnails: String!
   }
 
   input recipeInfo {
-    authors: [String]
-    description: String
-    title: String
-    recipeId: String
-    image: String
-    link: String
+    title: String!
+    description: String!
+    id: String!
+    thumbnails: String!
   }
 
   type Auth {
     token: ID!
     user: User
   }
-<<<<<<< HEAD
-=======
-
-
 
   type Query {
     me: User
   }
-
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
@@ -65,7 +56,6 @@ type Mutation {
     saveRecipe(input: recipeInfo!): User
     removeRecipe(recipeId: ID!): User
   }
->>>>>>> c0b9b47c261db0adc88c828466b37ecc27bb2da3
 `;
 
 module.exports = typeDefs;
