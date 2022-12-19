@@ -8,7 +8,7 @@ import { Image, Grid} from "semantic-ui-react"
 
 function Mobile() {
   const handleClick = () => {
-
+    console.log(content);
   }
     return (
       
@@ -27,6 +27,7 @@ function Mobile() {
        src={breakfast}
        size="huge"
        rounded
+       onClick={handleClick}
      />
    </Grid.Column>
    <Grid.Column >
