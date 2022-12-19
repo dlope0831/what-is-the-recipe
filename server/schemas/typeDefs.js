@@ -30,14 +30,14 @@ type Mutation {
   type Recipe {
     title: String!
     description: String!
-    id: String!
+    recipeId: String!
     thumbnails: String!
   }
 
   input recipeInfo {
     title: String!
     description: String!
-    id: String!
+    recipeId: String!
     thumbnails: String!
   }
 
