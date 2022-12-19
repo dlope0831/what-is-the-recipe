@@ -1,8 +1,17 @@
 import React from "react"
+<<<<<<<<< Temporary merge branch 1
 import Computer from "../components/Home/Comp"
 import Tablet from "../components/Home/Tablet"
 import Mobile from "../components/Home/Mobile"
-import { Grid, Search } from "semantic-ui-react"
+import { Header, Grid, Search } from "semantic-ui-react"
+=========
+import asian from "../assets/asian.jpg"
+import caribbean from "../assets/caribbean.jpg"
+import indian from "../assets/indian.jpg"
+import italian from "../assets/italian.jpg"
+import spanish from "../assets/spanish.jpg"
+import { Header, Image, Grid } from "semantic-ui-react"
+>>>>>>>>> Temporary merge branch 2
 
 function Home() {
   return (
