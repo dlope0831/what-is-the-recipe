@@ -18,6 +18,7 @@ import Footer from "./components/Footer"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Recipes from "./pages/Recipes"
 import Saved from "./pages/Savedrecipes"
+// import AppTest from './test';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -41,6 +42,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      {/* <AppTest/> */}
       <Router>
         <Sidebar />
         <div>
@@ -50,6 +52,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             {/* <Route path="/donate" element={<Donation />} /> */}
             <Route path="/recipes" element={<Recipes />} />
+            <Route exact path='/' component={SearchRecipes} />
             <Route path="/savedrecipes" element={<Saved />} />
           </Routes>
         </div>
