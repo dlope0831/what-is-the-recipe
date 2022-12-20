@@ -8,7 +8,7 @@ import { Image, Grid} from "semantic-ui-react"
 
 function Mobile() {
   const handleClick = () => {
-    console.log(content);
+
   }
     return (
       

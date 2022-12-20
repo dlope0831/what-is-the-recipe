@@ -13,11 +13,12 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Footer from "./pages/Footer"
+import Recipes from "./pages/Recipes"
+import Saved from "./pages/Savedrecipes"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"
-import Recipes from "./pages/Recipes"
-import Saved from "./pages/Savedrecipes"
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
