@@ -18,32 +18,13 @@ function Home() {
   }
 
   return (
-    <div>
+    <>
       <Computer />
-      <Grid textAlign="center">
-        <Grid.Row stretched>
-          <Grid.Column>
-            <Input
-              size="large"
-              placeholder="Search for a recipe"
-              action={{
-                icon: "search",
-                onClick: () => {
-                  handleClick()
-                },
-              }}
-                onChange={(e) => {
-              handleSearch(e)
-                }}
-            />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+
 
       <Mobile />
       <Tablet />
     </>
-
   )
 }
 

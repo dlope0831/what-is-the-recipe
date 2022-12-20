@@ -20,7 +20,6 @@
     "react-scripts": "3.4.1",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
-    "googleapis": "^109.0.1",
     "windups": "^1.2.1"
   },
   "scripts": {

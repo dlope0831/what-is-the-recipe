@@ -1,3 +1,6 @@
+require('dotenv').config()
+const { google } = require('googleapis');
+
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
   return fetch('/api/users/me', {
@@ -49,35 +52,35 @@ export const deleteRecipe = (recipeId, token) => {
   });
 };
 
-require('dotenv').config()
-const { google } = require('googleapis');
 
-export const searchYoutubeShorts = (query) => {
-  return google.youtube('v3').videos.list({
-    "key": process.env.YOUTUBE_TOKEN,
-    "part": [
-      "snippet"
-    ],
-    "q": `recipes + ${query}`,
-    "chart": "mostPopular",
-    "maxResults": 10,
-    "order": "viewCount",
-    "relevanceLanguage": "en",
-    "topicId": "/m/02wbm",
-    "type": [
-      "video"
-    ],
-    "videoCategoryId": "22",
-    "videoDuration": "short"
-  }).then((response) => {
-  const { data } = response;
-  // data.items.forEach((item) => {
-      // console.log(`Title: ${item.snippet.title}\nDescription: ${item.snippet.description}\n Creator: ${item.snippet.channelId} `)
+// export const searchYoutubeShorts = (query) => {
 
-  // })
-  return data.items;
-}).catch((err) => console.log(err))
-};
+
+//   return google.youtube('v3').videos.list({
+//     "key": process.env.YOUTUBE_TOKEN,
+//     "part": [
+//       "snippet"
+//     ],
+//     "q": `recipes + ${query}`,
+//     "chart": "mostPopular",
+//     "maxResults": 10,
+//     "order": "viewCount",
+//     "relevanceLanguage": "en",
+//     "topicId": "/m/02wbm",
+//     "type": [
+//       "video"
+//     ],
+//     "videoCategoryId": "22",
+//     "videoDuration": "short"
+//   }).then((response) => {
+//   const { data } = response;
+//   // data.items.forEach((item) => {
+//       // console.log(`Title: ${item.snippet.title}\nDescription: ${item.snippet.description}\n Creator: ${item.snippet.channelId} `)
+
+//   // })
+//   return data.items;
+// }).catch((err) => console.log(err))
+// };
 
 
 
@@ -86,3 +89,7 @@ export const searchYoutubeShorts = (query) => {
 // });
 
 // https://www.youtube.com/watch?v=n5Op1CIdg4Y
+
+export const searchYoutubeShorts = (query) => {
+  return fetch(`https://www.youtube.googleapis.com/youtube/v3/search?q=${query}`);
+};
