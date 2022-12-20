@@ -16,7 +16,7 @@ function Mobile() {
           <Grid.Column>
             <Image
               label={{
-                size: "huge",
+                size: "large",
                 color: "teal",
                 content: "Breakfast",
                 icon: "utensils",
@@ -24,7 +24,7 @@ function Mobile() {
               }}
               alt='breakfast'
               src={breakfast}
-              size="huge"
+              size="medium"
               rounded
               onClick={handleClick}
             />
@@ -32,7 +32,7 @@ function Mobile() {
           <Grid.Column>
             <Image
               label={{
-                size: "huge",
+                size: "large",
                 color: "pink",
                 content: "Dessert",
                 icon: "utensils",
@@ -40,7 +40,7 @@ function Mobile() {
               }}
               alt='dessert'
               src={dessert}
-              size="huge"
+              size="medium"
               rounded
               onClick={handleClick}
             />
@@ -48,7 +48,7 @@ function Mobile() {
           <Grid.Column>
             <Image
               label={{
-                size: "huge",
+                size: "large",
                 color: "green",
                 content: "Vegan",
                 icon: "utensils",
@@ -56,7 +56,7 @@ function Mobile() {
               }}
               alt='vegan'
               src={vegan}
-              size="huge"
+              size="medium"
               rounded
               onClick={handleClick}
             />

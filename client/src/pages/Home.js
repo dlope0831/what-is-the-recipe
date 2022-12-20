@@ -1,62 +1,18 @@
-import React, { useState } from "react"
+import React from "react"
 import Computer from "../components/Home/Comp"
 import Tablet from "../components/Home/Tablet"
 import Mobile from "../components/Home/Mobile"
-import { Grid, Input, Embed } from "semantic-ui-react"
+import TopVids from "../pages/topVideos"
+import Search from "../components/Search"
 
 function Home() {
-  // const [open, setOpen] = React.useState(false)
-  const [searchState, setSearchState] = useState("")
-
-  const handleSearch = (e) => {
-    const searchInput = e.target.value
-
-    setSearchState(searchInput)
-  }
-
-  const handleClick = () => {
-    console.log(searchState)
-  }
-
   return (
     <>
       <Computer />
-      <Grid textAlign="center">
-        <Grid.Row stretched>
-          <Grid.Column>
-            <Input
-              size="large"
-              placeholder="Search for a recipe"
-              action={{
-                icon: "search",
-                onClick: () => {
-                  handleClick()
-                },
-              }}
-              onChange={(e) => {
-                handleSearch(e)
-              }}
-            />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <Search />
       <Mobile />
       <Tablet />
-
-      <Grid text style={{ padding: "55px" }} columns={3} className="topVids" stackable>
-        <Grid.Row>
-          <Grid.Column>
-            <Embed id="dlFJjTbMwyM" source="youtube"/>
-            <br />
-          </Grid.Column>
-          <Grid.Column>
-            <Embed id="1AJYxBAYHoI" source="youtube" />
-          </Grid.Column>
-          <Grid.Column>
-            <Embed id="zu0MMLCLcps" source="youtube" />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <TopVids />
     </>
   )
 }
