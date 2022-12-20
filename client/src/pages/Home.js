@@ -2,9 +2,10 @@ import React, { useState } from "react"
 import Computer from "../components/Home/Comp"
 import Tablet from "../components/Home/Tablet"
 import Mobile from "../components/Home/Mobile"
-import { Grid, Input } from "semantic-ui-react"
+import { Grid, Input, Embed } from "semantic-ui-react"
 
 function Home() {
+  // const [open, setOpen] = React.useState(false)
   const [searchState, setSearchState] = useState("")
 
   const handleSearch = (e) => {
@@ -32,16 +33,30 @@ function Home() {
                   handleClick()
                 },
               }}
-                onChange={(e) => {
-              handleSearch(e)
-                }}
+              onChange={(e) => {
+                handleSearch(e)
+              }}
             />
           </Grid.Column>
         </Grid.Row>
       </Grid>
-
       <Mobile />
       <Tablet />
+
+      <Grid text style={{ padding: "55px" }} columns={3}>
+        <Grid.Row>
+          <Grid.Column>
+            <Embed id="dlFJjTbMwyM" source="youtube"/>
+            <br />
+          </Grid.Column>
+          <Grid.Column>
+            <Embed id="1AJYxBAYHoI" source="youtube" />
+          </Grid.Column>
+          <Grid.Column>
+            <Embed id="zu0MMLCLcps" source="youtube" />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     </>
   )
 }
