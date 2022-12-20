@@ -34,7 +34,7 @@ code {
     position: relative;
   }
 
-  .embed {
+  .topVids {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

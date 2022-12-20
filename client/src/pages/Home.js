@@ -43,7 +43,7 @@ function Home() {
       <Mobile />
       <Tablet />
 
-      <Grid text style={{ padding: "55px" }} columns={3}>
+      <Grid text style={{ padding: "55px" }} columns={3} className="topVids" stackable>
         <Grid.Row>
           <Grid.Column>
             <Embed id="dlFJjTbMwyM" source="youtube"/>
