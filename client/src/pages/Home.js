@@ -1,31 +1,48 @@
-import React from "react"
+import React, { useState } from "react"
 import Computer from "../components/Home/Comp"
 import Tablet from "../components/Home/Tablet"
 import Mobile from "../components/Home/Mobile"
-import { Grid, Search } from "semantic-ui-react"
+import { Grid, Input } from "semantic-ui-react"
 
 function Home() {
+  const [searchState, setSearchState] = useState("")
+
+  const handleSearch = (e) => {
+    const searchInput = e.target.value
+
+    setSearchState(searchInput)
+  }
+
+  const handleClick = () => {
+    console.log(searchState)
+  }
+
   return (
     <div>
       <Computer />
-      <p>
-        <Grid textAlign="center">
-          <Grid.Row stretched>
-            <Grid.Column>
-              <Search
-                input={{ icon: "search", iconPosition: "left" }}
-                size="medium"
-                placeholder="Search for a recipe"
-              />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </p>
-      <p>
+      <Grid textAlign="center">
+        <Grid.Row stretched>
+          <Grid.Column>
+            <Input
+              size="large"
+              placeholder="Search for a recipe"
+              action={{
+                icon: "search",
+                onClick: () => {
+                  handleClick()
+                },
+              }}
+                onChange={(e) => {
+              handleSearch(e)
+                }}
+            />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+
       <Mobile />
       <Tablet />
-      </p>
-    </div>
+    </>
   )
 }
 
