@@ -13,6 +13,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Footer from "./components/Footer"
+import SearchRecipes from "./pages/searchRecipe"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"

@@ -6,7 +6,7 @@ export const getSavedRecipeIds = () => {
   return savedRecipeIds;
 };
 
-export const saveRecipeIds = (recipeIdArr) => {
+export const savedRecipeIds = (recipeIdArr) => {
   if (recipeIdArr.length) {
     localStorage.setItem('saved_recipes', JSON.stringify(recipeIdArr));
   } else {

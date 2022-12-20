@@ -11,26 +11,43 @@ import {
 
 import Auth from '../utils/auth';
 import { searchYoutubeShorts } from '../utils/API';
-import { saveRecipeIds, getSavedRecipeIds } from '../utils/localStorage';
+import { savedRecipeIds, getSavedRecipeIds } from '../utils/localStorage';
 import { useMutation } from '@apollo/client';
 import { SAVE_RECIPE } from '../utils/mutations';
 
 const SearchRecipes = () => {
  
   const [searchedRecipes, setSearchedRecipes] = useState([]);
-
   const [searchInput, setSearchInput] = useState('');
-
-
   const [savedRecipeIds, setSavedRecipeIds] = useState(getSavedRecipeIds());
+  // const [ query, setQuery ] = useState("ramen");
 
   const [saveRecipe, { error }] = useMutation(SAVE_RECIPE);
 
+  const handleUpdate = (e) => {
+    setSearchInput(e.target.value);
+}
+
+const handleSearch = () => {
+    console.log(searchInput);
+    setSearchInput(searchInput);
+}
+
+useEffect(() => {
+  fetch(`/api/shorts/${searchInput}`)
+  .then((resp) => {
+      return resp.json()
+  })
+  .then((ytData) => {
+      console.log(typeof ytData)
+      console.log(ytData)
+      setSearchedRecipes(ytData)
+  })
+}, [searchInput]);
 
   useEffect(() => {
-    return () => saveRecipeIds(savedRecipeIds);
+    return () => savedRecipeIds(savedRecipeIds);
   });
-
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -49,11 +66,10 @@ const SearchRecipes = () => {
       const { items } = await response.json();
 
       const recipeData = items.map((recipe) => ({
+        title: recipe.recipeInfo.title,
+        description: recipe.recipeInfo.description,
         recipeId: recipe.id,
-        authors: recipe.volumeInfo.authors || ['No author to display'],
-        title: recipe.volumeInfo.title,
-        description: recipe.volumeInfo.description,
-        image: recipe.volumeInfo.imageLinks?.thumbnail || '',
+        thumbnails: recipe.recipeInfo.imageLinks?.thumbnail || '',
       }));
 
       setSearchedRecipes(recipeData);
@@ -99,14 +115,15 @@ const SearchRecipes = () => {
                 <Form.Control
                   name="searchInput"
                   value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
+                  onChange={handleUpdate}
+                  // onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
                   placeholder="Search for a recipe"
                 />
               </Col>
               <Col xs={12} md={4}>
-                <Button type="submit" variant="success" size="lg">
+                <Button onClick={handleSearch} type="submit" variant="success" size="lg">
                   Submit Search
                 </Button>
               </Col>
