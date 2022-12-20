@@ -1,5 +1,5 @@
-require('dotenv').config()
-const { google } = require('googleapis');
+// require('dotenv').config()
+// const { google } = require('googleapis');
 
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
@@ -93,3 +93,4 @@ export const deleteRecipe = (recipeId, token) => {
 export const searchYoutubeShorts = (query) => {
   return fetch(`https://www.youtube.googleapis.com/youtube/v3/search?q=${query}`);
 };
+  
