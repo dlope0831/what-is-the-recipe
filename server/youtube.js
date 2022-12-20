@@ -3,7 +3,7 @@ const { google } = require('googleapis');
 
 
 module.exports =  searchYoutubeShorts = async (query) => {
-  return await google.youtube('v3').videos.list({
+  return await google.youtube('v3').search.list({
     "key": process.env.YOUTUBE_TOKEN,
     "part": [
       "snippet"

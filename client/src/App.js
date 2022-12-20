@@ -19,6 +19,7 @@ import SearchRecipes from "./pages/searchRecipe"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Recipes from "./pages/Recipes"
 import Saved from "./pages/Savedrecipes"
+// import AppTest from './test';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -42,6 +43,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      {/* <AppTest/> */}
       <Router>
         <Sidebar />
         <div>

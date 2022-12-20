@@ -40,6 +40,7 @@ app.get('/api/shorts/:q', (req, res) => {
   })
 })
 
+
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
