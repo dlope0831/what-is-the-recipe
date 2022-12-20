@@ -13,7 +13,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Footer from "./pages/Footer"
-import SearchRecipes from "./pages/searchRecipe"
+import SearchRecipes from "./pages/SearchRecipes"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -43,7 +43,6 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      {/* <AppTest/> */}
       <Router>
         <Sidebar />
         <div>
@@ -53,9 +52,12 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             {/* <Route path="/donate" element={<Donation />} /> */}
             <Route path="/recipes" element={<Recipes />} />
-            <Route exact path='/' component={SearchRecipes} />
+            {/* <Route exact path='/' component={<SearchRecipes />} /> */}
             <Route path="/savedrecipes" element={<Saved />} />
           </Routes>
+        </div>
+        <div>
+          <SearchRecipes />
         </div>
         <footer>
           <Footer />
