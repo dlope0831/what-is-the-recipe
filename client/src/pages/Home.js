@@ -43,6 +43,7 @@ function Home() {
       <Mobile />
       <Tablet />
     </>
+
   )
 }
 
