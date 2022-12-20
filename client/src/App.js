@@ -12,7 +12,7 @@ import Sidebar from "./components/Navbar"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
-import Footer from "./pages/Footer"
+import Footer from "./components/Footer"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"

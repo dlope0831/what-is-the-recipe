@@ -16,6 +16,27 @@ code {
 .footer {
   width: 100%;
   margin-top: auto;
-  bottom: 0px;
+  bottom: 0;
   position: fixed;
+}
+
+.embed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 15px black solid;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    width: 100%;
+    margin: auto;
+    position: relative;
+  }
+
+  .topVids {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
