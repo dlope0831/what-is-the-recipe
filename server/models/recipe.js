@@ -9,7 +9,7 @@ const recipeSchema = new Schema({
     type: String,
     required: true,
   },
-  id: {
+  recipeId: {
     type: String,
     required: true,
   },
