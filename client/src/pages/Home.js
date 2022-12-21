@@ -1,18 +1,15 @@
 import React from "react"
-import Computer from "../components/Home/Comp"
-import Tablet from "../components/Home/Tablet"
-import Mobile from "../components/Home/Mobile"
+import Main from "../components/Home"
 // import SearchRecipes from "./SearchRecipes"
-import TopVids from "../pages/topVideos"
+// import TopVids from "../pages/topVideos"
 
 
 function Home() {
   return (
     <>
-      <Computer />
-      <Mobile />
-      <Tablet />
-      <TopVids/>
+      <Main />
+
+      {/* <TopVids/> */}
       {/* <SearchRecipes /> */}
     </>
   )
