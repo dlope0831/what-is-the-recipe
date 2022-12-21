@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 import Auth from "../utils/auth"
 
   function Bar() {
+    if (Auth.loggedIn()) {
       return (
         <Navbar bg="dark" variant="dark" expand="lg" >
         <Container>
@@ -25,8 +26,15 @@ import Auth from "../utils/auth"
       </Container>
     </Navbar>
       );
+    } else {
+      return (
+        <div>
+        <Button variant="outline-light" href="/login">Login</Button>
+        <Button className="m-2" href="/signup">Sign Up</Button>
+        </div>
+      );
     }
-
+  }
 
 
 
