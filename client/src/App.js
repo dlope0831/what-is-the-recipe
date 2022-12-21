@@ -13,14 +13,6 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Footer from "./pages/Footer"
-<<<<<<< HEAD
-import Recipes from "./pages/Recipes"
-import Saved from "./pages/Savedrecipes"
-// import Donation from "./components/Donation"
-// import { StoreProvider } from "./utils/GlobalState";
-import "bootstrap/dist/css/bootstrap.min.css"
-
-=======
 import SearchRecipes from "./pages/SearchRecipes"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
@@ -28,7 +20,6 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Recipes from "./pages/Recipes"
 import Saved from "./pages/Savedrecipes"
 // import AppTest from './test';
->>>>>>> 3c2a49c16aaac32e9ae1c456f808c4e422958b52
 
 const httpLink = createHttpLink({
   uri: "/graphql",
