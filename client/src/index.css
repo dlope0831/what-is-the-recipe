@@ -17,8 +17,7 @@ code {
   width: 100%;
   margin-top: auto;
   bottom: 0;
-  text-align: center;
-  position: relative;
+  position: fixed;
 }
 
 .embed {
@@ -39,6 +38,5 @@ code {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%;
   }
 }

@@ -13,7 +13,7 @@ function Footer() {
         inverted
         vertical
       >
-        <Container textAlign="center" stackable className="footerContainer"> 
+        <Container textAlign="center" stackable className="footerContainer">
           <List horizontal inverted divided link  size="small">
             <List.Item as="a" href="https://github.com/dlope0831">
               Daniela
