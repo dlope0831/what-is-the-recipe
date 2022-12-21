@@ -12,13 +12,13 @@ import Sidebar from "./components/Navbar"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
-import Footer from "./pages/Footer"
+import Footer from "./components/Footer"
 import SearchRecipes from "./pages/SearchRecipes"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"
 import Recipes from "./pages/Recipes"
-import Saved from "./pages/Savedrecipes"
+import Saved from "./pages/SavedRecipes"
 // import AppTest from './test';
 
 const httpLink = createHttpLink({
@@ -47,17 +47,17 @@ function App() {
         <Sidebar />
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<Home />} />
             {/* <Route path="/donate" element={<Donation />} /> */}
-            <Route path="/recipes" element={<Recipes />} />
+            {/* <Route path="/recipes" element={<Recipes />} /> */}
             {/* <Route exact path='/' component={<SearchRecipes />} /> */}
             <Route path="/savedrecipes" element={<Saved />} />
+            <Route path="/recipes" element={<SearchRecipes />} />
           </Routes>
         </div>
         <div>
-          <SearchRecipes />
         </div>
         <footer>
           <Footer />
