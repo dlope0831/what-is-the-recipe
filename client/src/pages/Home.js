@@ -4,11 +4,12 @@ import Tablet from "../components/Home/Tablet"
 import Mobile from "../components/Home/Mobile"
 // import SearchRecipes from "./SearchRecipes"
 import TopVids from "../pages/topVideos"
-// import Search from "../components/Search"
+
 
 function Home() {
   return (
     <>
+    <h1 class="font-monospace text-center m-4 fs-1 fw-bold" > HomePage</h1>
       <Computer />
       <Mobile />
       <Tablet />
