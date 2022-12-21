@@ -6,10 +6,10 @@ import App from './App';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-    {/* <AppTest/> */}
-  </React.StrictMode>
+    // <AppTest/>
+  // </React.StrictMode>
   ,
   document.getElementById('root')
 );
