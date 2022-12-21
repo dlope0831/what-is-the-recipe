@@ -35,15 +35,4 @@ code {
     position: relative;
   }
 
-  .topVids {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-<<<<<<< HEAD
-    width: 100%;
-  }
 }
-=======
-  }
-}
->>>>>>> c8d86d8e8f44775c7b5fd345690e2a85092cdff0

@@ -7,8 +7,6 @@ import { saveRecipeIds, getSavedRecipeIds } from "../utils/localStorage"
 import { useMutation } from "@apollo/client"
 import { SAVE_RECIPE } from "../utils/mutations"
 
-import { Jumbotron, Container, Col, Form } from "react-bootstrap"
-
 function SearchRecipes() {
   const [recipeData, setRecipeData] = useState([])
 
@@ -81,7 +79,7 @@ function SearchRecipes() {
     const recipeToSave = recipeData.find(
       (recipe) => recipe.recipeId === recipeId
     )
-
+    // console.log(recipeToSave.id.videoId)
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null
 
