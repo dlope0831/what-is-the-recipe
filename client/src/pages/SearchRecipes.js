@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {  Embed } from "semantic-ui-react";
 
+
 import {
   Jumbotron,
   Container,
@@ -131,6 +132,7 @@ const handleSearch = () => {
             {/* <p>{inputVal} </p>
             <input type="text" value={inputVal} onChange={handleUpdate} /> */}
             <button onClick={handleSearch}>Search</button>
+
         {recipeData.map((short,i)=> {
             return (
                 <div key={i}>
@@ -140,16 +142,19 @@ const handleSearch = () => {
                 <br>
                 </br>
                 Description: 
-                <br>
-                </br>{short.snippet.description}
+                <br></br>{short.snippet.description}
                 <Embed
-            id={short.snippet.videoId}
+            id={short.id.videoId}
+
             source="youtube"
+            url= {`www.youtube.com/shorts/${query}`}
+
             iframe={{
               allowFullScreen: true,
             }}
             aspectRatio='4:3'
           />
+          {console.log(short.snippet.videoId)}
                 </div>
             )
         })}
