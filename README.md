@@ -36,7 +36,7 @@ Sign up or Log in to search and save top trending shorts.
 
 https://opensource.org/licenses/ISC
 
-    ## Authors
+## Authors
 
 To view our other work, please visit our GitHub profiles at
 [dlope0831](https://github.com/dlope0831),
