@@ -13,10 +13,14 @@ function Footer() {
         inverted
         vertical
       >
+<<<<<<< HEAD:client/src/components/Footer.js
         <Container textAlign="center" stackable className="footerContainer"> 
+=======
+        <Container textAlign="center" stackable= "true">
+>>>>>>> 3c2a49c16aaac32e9ae1c456f808c4e422958b52:client/src/pages/Footer.js
           <List horizontal inverted divided link  size="small">
             <List.Item as="a" href="https://github.com/dlope0831">
-              Daniella
+              Daniela
             </List.Item>
             <List.Item as="a" href="https://github.com/ConnieMarie">
               Connie
