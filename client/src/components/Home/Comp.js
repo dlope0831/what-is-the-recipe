@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 import { Image, Grid } from "semantic-ui-react"
 
@@ -8,14 +8,63 @@ import indian from "../../assets/indian.jpg"
 import italian from "../../assets/italian.jpg"
 import spanish from "../../assets/spanish.jpg"
 
+import { searchYoutubeShorts } from "../../utils/API"
+
 function Computer() {
-  const handleClick = (event) => {
-    console.log(event.target.alt)
+  const [query, setQuery] = useState("food")
+
+
+  useEffect(() => {
+    fetch(`/api/shorts/${query}`)
+      .then((resp) => {
+        return resp.json()
+      })
+      .then((ytData) => {
+        console.log(typeof ytData)
+        console.log(ytData)
+        // setRecipeData(ytData)
+      })
+  }, [query])
+
+
+  const handleClick = async (event) => {
+    event.preventDefault()
+    // console.log(event.target.alt)
+
+    setQuery(event.target.alt)
+
+    const response = searchYoutubeShorts(query)
+
+    console.log(response)
+
+    // if (!imgType) {
+    //   return false
+    // }
+
+    // try {
+    //   const response = await searchYoutubeShorts(imgType)
+
+    //   if (!response.ok) {
+    //     throw new Error("something went wrong!")
+    //   }
+
+    //   const { items } = await response.json()
+
+    //   // const recipeData = items.map((short) => ({
+    //   //   title: short.snippet.title,
+    //   //   description: short.snippet.description,
+    //   // }))
+
+    //   console.log(items)
+    // } catch (err) {
+    //   console.log(err)
+    // }
   }
+
   return (
     <>
-      <Grid text = "true" style={{ padding: '55px' }} columns={5}>
-        <Grid.Row  only="computer">
+      <Grid text="true" style={{ padding: "55px" }} columns={5}>
+        <Grid.Row only="computer">
           <Grid.Column>
             <Image
               label={{
@@ -25,7 +74,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='spanish'
+              alt="spanish"
               src={spanish}
               size="medium"
               rounded
@@ -41,7 +90,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='italian'
+              alt="italian"
               src={italian}
               size="medium"
               rounded
@@ -57,7 +106,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='indian'
+              alt="indian"
               src={indian}
               size="medium"
               rounded
@@ -73,7 +122,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='east asian'
+              alt="east asian"
               src={asian}
               size="medium"
               rounded
@@ -89,7 +138,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='caribbean'
+              alt="caribbean"
               src={caribbean}
               size="medium"
               rounded
