@@ -53,7 +53,7 @@ function App() {
             {/* <Route path="/donate" element={<Donation />} /> */}
             {/* <Route path="/recipes" element={<Recipes />} /> */}
             {/* <Route exact path='/' component={<SearchRecipes />} /> */}
-            <Route path="/savedrecipes" element={<Saved />} />
+            <Route path="/SavedRecipes" element={<Saved />} />
             <Route path="/recipes" element={<SearchRecipes />} />
           </Routes>
         </div>
