@@ -36,6 +36,18 @@ Sign up or Log in to search and save top trending shorts.
 
 https://opensource.org/licenses/ISC
 
+## Contributing
+
+Guidelines to contribute to this project:
+
+ 1. **Fork** the repo on GitHub
+ 2. **Clone** the project to your own machine
+ 3. **Commit** changes to your own branch
+ 4. **Push** your work back up to your fork
+ 5. Submit a **Pull request** so that we can review your changes
+
+NOTE: Be sure to merge the latest from "upstream" before making a pull request!
+
 ## Authors
 
 To view our other work, please visit our GitHub profiles at
