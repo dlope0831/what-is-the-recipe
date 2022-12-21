@@ -57,8 +57,9 @@ function App() {
             <Route path="/recipes" element={<SearchRecipes />} />
           </Routes>
         </div>
-        <div>
-        </div>
+        {/* <div>
+          <SearchRecipes />
+        </div> */}
         <footer>
           <Footer />
         </footer>

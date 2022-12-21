@@ -17,9 +17,8 @@ import Auth from "../utils/auth"
               <Nav.Link as={Link} to="/"> Home</Nav.Link>
               <Nav.Link as={Link} to="/recipes">Recipes</Nav.Link>
               <Nav.Link as={Link} to="/savedrecipes">Saved</Nav.Link>
-              <Button className="m-2"><a href="/" onClick={() => Auth.logout()}>
+              <Button className="m-2" variant="light"  href="/" onClick={() => Auth.logout()}>
               Logout
-            </a>
             </Button>
               </Nav>
               </Navbar.Collapse>
@@ -28,9 +27,9 @@ import Auth from "../utils/auth"
       );
     } else {
       return (
-        <div>
-        <Button variant="outline-light" href="/login">Login</Button>
-        <Button className="m-2" href="/signup">Sign Up</Button>
+        <div className="text-center m-3">
+        <Button variant="success rounded-pill " size="lg" href="/login">Login</Button>
+        <Button   variant="warning rounded-pill" size="lg" href="/signup">Sign Up</Button>
         </div>
       );
     }
