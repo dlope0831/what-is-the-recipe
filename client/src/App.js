@@ -12,12 +12,14 @@ import Sidebar from "./components/Navbar"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
-import Footer from "./components/Footer"
+import Footer from "./pages/Footer"
+import SearchRecipes from "./pages/SearchRecipes"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"
 import Recipes from "./pages/Recipes"
 import Saved from "./pages/Savedrecipes"
+// import AppTest from './test';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -50,9 +52,13 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             {/* <Route path="/donate" element={<Donation />} /> */}
             <Route path="/recipes" element={<Recipes />} />
+            {/* <Route exact path='/' component={<SearchRecipes />} /> */}
             <Route path="/savedrecipes" element={<Saved />} />
           </Routes>
         </div>
+        {/* <div>
+          <SearchRecipes />
+        </div> */}
         <footer>
           <Footer />
         </footer>

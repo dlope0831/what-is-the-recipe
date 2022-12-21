@@ -16,7 +16,7 @@ function Footer() {
         <Container textAlign="center" stackable className="footerContainer"> 
           <List horizontal inverted divided link  size="small">
             <List.Item as="a" href="https://github.com/dlope0831">
-              Daniella
+              Daniela
             </List.Item>
             <List.Item as="a" href="https://github.com/ConnieMarie">
               Connie
