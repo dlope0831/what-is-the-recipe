@@ -9,7 +9,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "bootstrap": "^4.6.2",
+    "bootstrap": "^5.2.3",
     "graphql": "^16.6.0",
     "jwt-decode": "^2.2.0",
     "react": "^16.13.1",
@@ -23,7 +23,7 @@
     "windups": "^1.2.1"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

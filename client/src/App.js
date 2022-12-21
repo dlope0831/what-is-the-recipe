@@ -10,11 +10,12 @@ import { setContext } from "@apollo/client/link/context"
 import "semantic-ui-css/semantic.min.css"
 import Sidebar from "./components/Navbar"
 import Home from "./pages/Home"
-import Login from "./pages/Login"
-import Signup from "./pages/Signup"
 import Footer from "./pages/Footer"
 import Recipes from "./pages/Recipes"
 import Saved from "./pages/Savedrecipes"
+import Login from "./pages/Login"
+import Signup from "./pages/Signup"
+import Auth from "./utils/auth"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -40,6 +41,7 @@ const client = new ApolloClient({
 })
 
 function App() {
+  if (Auth.loggedIn()) {
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -47,19 +49,26 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
             {/* <Route path="/donate" element={<Donation />} /> */}
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/savedrecipes" element={<Saved />} />
+            </Routes>
+          </div>
+        <Footer />
+        </Router>
+      </ApolloProvider>
+            );
+      } else {
+        return(
+          <Router>
+                    <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           </Routes>
-        </div>
-        <footer>
-          <Footer />
-        </footer>
-      </Router>
-    </ApolloProvider>
-  )
-}
+          </Router>
+          );
+        }
+      }
+
 
 export default App
