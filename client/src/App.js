@@ -17,12 +17,8 @@ import SearchRecipes from "./pages/SearchRecipes"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"
-<<<<<<< HEAD
-
-=======
 // import Recipes from "./pages/Recipes"
-import Saved from "./pages/SavedRecipes"
->>>>>>> 19bbb10dad61ebf1cb9dec3e8948fa04e2d6f6dd
+
 // import AppTest from './test';
 
 const httpLink = createHttpLink({
