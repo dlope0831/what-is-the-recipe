@@ -7,6 +7,7 @@ import { saveRecipeIds, getSavedRecipeIds } from "../utils/localStorage"
 import { useMutation } from "@apollo/client"
 import { SAVE_RECIPE } from "../utils/mutations"
 
+import { Jumbotron, Container, Col, Form } from "react-bootstrap"
 
 function SearchRecipes() {
   const [recipeData, setRecipeData] = useState([])
@@ -61,12 +62,14 @@ function SearchRecipes() {
       const { items } = await response.json()
 
       const recipeData = items.map((short) => ({
+        recipeId: short.id.videoId,
         title: short.snippet.title,
         description: short.snippet.description,
       }))
 
       setQuery(recipeData)
       setInputVal("")
+      console.log(recipeData)
     } catch (err) {
       console.error(err)
     }
