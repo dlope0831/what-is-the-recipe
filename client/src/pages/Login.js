@@ -34,7 +34,7 @@ function Login(props) {
   return (
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="pink" textAlign="center">
+        <Header as="h2" color="yellow" textAlign="center">
           Log-in to your account
         </Header>
         <Form size="large" onSubmit={handleFormSubmit}>
@@ -63,7 +63,7 @@ function Login(props) {
                 </p>
               </div>
             ) : null}
-            <Button color="pink" fluid size="large" type="submit">
+            <Button color="yellow" fluid size="large" type="submit">
               Login
             </Button>
           </Segment>
