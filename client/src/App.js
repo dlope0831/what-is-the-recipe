@@ -17,7 +17,7 @@ import SearchRecipes from "./pages/SearchRecipes"
 // import Donation from "./components/Donation"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"
-import Recipes from "./pages/Recipes"
+// import Recipes from "./pages/Recipes"
 import Saved from "./pages/SavedRecipes"
 // import AppTest from './test';
 

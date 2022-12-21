@@ -11,7 +11,7 @@ import spanish from "../../assets/spanish.jpg"
 import { searchYoutubeShorts } from "../../utils/API"
 
 function Computer() {
-  const [query, setQuery] = useState("food")
+  const [query, setQuery] = useState(" ")
 
 
   useEffect(() => {
