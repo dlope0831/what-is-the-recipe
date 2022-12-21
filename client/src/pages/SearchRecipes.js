@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { Embed } from "semantic-ui-react"
+import { Embed, Button } from "semantic-ui-react"
 
-import {
-  Jumbotron,
-  Container,
-  Col,
-  Form
-} from "react-bootstrap"
+import { Jumbotron, Container, Col, Form } from "react-bootstrap"
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth"
 import { searchYoutubeShorts } from "../utils/API"
 import { saveRecipeIds, getSavedRecipeIds } from "../utils/localStorage"
 import { useMutation } from "@apollo/client"
@@ -67,7 +62,7 @@ const SearchRecipes = () => {
       const { items } = await response.json()
 
       const recipeData = items.map((short) => ({
-        recipeId: short.id,
+        recipeId: short.id.videoId,
         title: short.snippet.title,
         description: short.snippet.description,
       }))
@@ -81,7 +76,7 @@ const SearchRecipes = () => {
   }
 
   const handleSaveRecipe = async (recipeId) => {
-    console.log(recipeId); // log the recipeId here
+    console.log(recipeId) // log the recipeId here
 
     const recipeToSave = recipeData.find(
       (recipe) => recipe.recipeId === recipeId
@@ -103,6 +98,7 @@ const SearchRecipes = () => {
     } catch (err) {
       console.error(err)
     }
+    console.log(savedRecipeIds)
   }
 
   return (
@@ -141,28 +137,39 @@ const SearchRecipes = () => {
                 Description: {short.snippet.description}
                 <br />
                 {short.snippet.description}
-                     <Embed
-                        id={short.id.videoId}
-                        source="youtube"
-                        // url= {`www.youtube.com/shorts/${query}`}
+                <Embed
+                  id={short.id.videoId}
+                  source="youtube"
+                  // url= {`www.youtube.com/shorts/${query}`}
 
-                        iframe={{
-                          allowFullScreen: true,
-                        }}
-                        aspectRatio="4:3"
-                      />
-                <button onClick={() => handleSaveRecipe(short.videoId)}>Save Recipe</button>
+                  iframe={{
+                    allowFullScreen: true,
+                  }}
+                  aspectRatio="4:3"
+                />
+                {Auth.loggedIn() && (
+                    <Button
+                      disabled={savedRecipeIds?.some((savedRecipeId) => savedRecipeId === short.recipeId)}
+                      className='btn-block btn-info'
+                      onClick={() => handleSaveRecipe(short.recipeId)}>
+                      {savedRecipeIds?.some((savedRecipeId) => savedRecipeId === short.recipeId)
+                        ? 'This recipe has already been saved!'
+                        : 'Save this Recipe!'}
+                    </Button>
+                  )}
+                {/* <button onClick={() => handleSaveRecipe(short.id.videoId)}>
+                  Save Recipe
+                </button> */}
               </div>
-            );
+            )
           })}
         </div>
       </Container>
     </>
-  );
+  )
 }
 
-export default SearchRecipes;
-
+export default SearchRecipes
 
 // import React, { useState, useEffect } from "react"
 // import { Embed } from "semantic-ui-react"
@@ -327,7 +334,7 @@ export default SearchRecipes;
 // export default SearchRecipes
 
 // {
-  /* <Container>
+/* <Container>
         <h2>
           {recipeData.length
             ? `Viewing ${recipeData.length} results:`
@@ -372,7 +379,6 @@ export default SearchRecipes;
       </Container> */
 // }
 
-
 //   Button,
-  //   Card,
-  //   CardColumns,
+//   Card,
+//   CardColumns,
