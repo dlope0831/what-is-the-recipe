@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
-import { Image, Grid } from "semantic-ui-react"
+import { Image, Grid, Embed } from "semantic-ui-react"
 
 import asian from "../../assets/asian.jpg"
 import caribbean from "../../assets/caribbean.jpg"
@@ -8,14 +8,36 @@ import indian from "../../assets/indian.jpg"
 import italian from "../../assets/italian.jpg"
 import spanish from "../../assets/spanish.jpg"
 
-function Computer() {
-  const handleClick = (event) => {
-    console.log(event.target.alt)
+// import { searchYoutubeShorts } from "../../utils/API"
+
+function Main() {
+
+  const [recipeData, setRecipeData] = useState([])
+  const [query, setQuery] = useState("foodie")
+
+  useEffect(() => {
+    fetch(`/api/shorts/${query}`)
+      .then((resp) => {
+        return resp.json()
+      })
+      .then((ytData) => {
+        console.log(typeof ytData)
+        console.log(ytData)
+        setRecipeData(ytData)
+      })
+  }, [query])
+
+
+  const handleClick = async (event) => {
+    event.preventDefault()
+
+    setQuery(event.target.alt)
   }
+
   return (
     <>
-      <Grid text = "true" style={{ padding: '55px' }} columns={5}>
-        <Grid.Row  only="computer">
+      <Grid text="true" style={{ padding: "55px" }} doubling columns={5} stackable>
+        <Grid.Row >
           <Grid.Column>
             <Image
               label={{
@@ -25,7 +47,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='spanish'
+              alt="spanish"
               src={spanish}
               size="medium"
               rounded
@@ -41,7 +63,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='italian'
+              alt="italian"
               src={italian}
               size="medium"
               rounded
@@ -57,7 +79,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='indian'
+              alt="indian"
               src={indian}
               size="medium"
               rounded
@@ -73,7 +95,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='east asian'
+              alt="east asian"
               src={asian}
               size="medium"
               rounded
@@ -89,7 +111,7 @@ function Computer() {
                 icon: "utensils",
                 ribbon: true,
               }}
-              alt='caribbean'
+              alt="caribbean"
               src={caribbean}
               size="medium"
               rounded
@@ -98,8 +120,35 @@ function Computer() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <Grid style={{ padding: "55px" }} columns={3} className="topVids" stackable textAlign="center">
+      <Grid.Row>
+        <Grid.Column>
+          {recipeData.map((short, i) => {
+            return (
+              <div key={i}>
+                Title:
+                <br />
+                <strong> {short.snippet.title} </strong>
+                <br />
+                Description:
+                <br />
+                {short.snippet.description}
+                <Embed
+                  id={short.id.videoId}
+                  source="youtube"
+                  iframe={{
+                    allowFullScreen: true,
+                  }}
+                  aspectRatio="4:3"
+                />
+              </div>
+            )
+          })}
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
     </>
   )
 }
 
-export default Computer
+export default Main ;
