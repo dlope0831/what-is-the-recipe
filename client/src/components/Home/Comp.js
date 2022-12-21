@@ -14,7 +14,7 @@ function Computer() {
   }
   return (
     <>
-      <Grid text style={{ padding: '55px' }} columns={5}>
+      <Grid text = "true" style={{ padding: '55px' }} columns={5}>
         <Grid.Row  only="computer">
           <Grid.Column>
             <Image
