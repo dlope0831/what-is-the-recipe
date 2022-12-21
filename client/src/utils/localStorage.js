@@ -23,7 +23,7 @@ export const removeRecipeId = (recipeId) => {
     return false;
   }
 
-  const updatedSavedRecipeIds = savedRecipeIds?.filter((savedRecipeId) => savedRecipeId !== recipeId);
+  const updatedSavedRecipeIds = saveRecipeIds?.filter((savedRecipeId) => savedRecipeId !== recipeId);
   localStorage.setItem('saved_recipes', JSON.stringify(updatedSavedRecipeIds));
 
   return true;

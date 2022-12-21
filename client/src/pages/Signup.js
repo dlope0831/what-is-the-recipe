@@ -35,7 +35,7 @@ function Signup(props) {
   return (
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="pink" textAlign="center">
+        <Header as="h2" color="green" textAlign="center">
           Sign up
         </Header>
         <Form onSubmit={handleFormSubmit}>
@@ -86,7 +86,8 @@ function Signup(props) {
           <Form.Field
             id="form-button-control-public"
             control={Button}
-            content="Confirm"
+            color='green'
+            content="Sign up!"
             type="submit"
           />
         </Form>
