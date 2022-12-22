@@ -27,9 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // app.use(routes);
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'))
-})
+
 app.get('/api/shorts/:q', (req, res) => {
   searchYoutubeShorts(req.params.q).then((response)=>{
     res.status(200).json(response)
@@ -38,6 +36,10 @@ app.get('/api/shorts/:q', (req, res) => {
     console.log(error)
     res.status(500).json(error)
   })
+})
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
 
 
