@@ -18,6 +18,7 @@ function Main() {
   useEffect(() => {
     fetch(`/api/shorts/${query}`)
       .then((resp) => {
+        console.log(resp)
         return resp.json()
       })
       .then((ytData) => {
