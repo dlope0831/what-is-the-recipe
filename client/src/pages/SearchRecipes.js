@@ -138,7 +138,6 @@ function SearchRecipes() {
                 <div  key={i}>
                 <p className="fs-3 m-2 bg-success text-light">Title </p>
                   {short.snippet.title}
-             
                  <p className="fs-5 font-italic"><em> Description:</em></p>
                 <p className="text-capitalize "> <b>  {short.snippet.description} </b> </p>
                   <Embed

@@ -136,19 +136,16 @@ function Main() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <Grid style={{ padding: "55px" }} columns={3} className="topVids" stackable textAlign="center">
+      <Grid style={{ padding: "50px" }} columns={2} className="topVids" stackable textAlign="center">
       <Grid.Row>
         <Grid.Column>
           {recipeData.map((short, i) => {
             return (
               <div key={i}>
-                Title:
-                <br />
+         <p className="fs-3 m-2 bg-success text-light rounded-top">Title </p>
                 <strong> {short.snippet.title} </strong>
-                <br />
-                Description:
-                <br />
-                {short.snippet.description}
+                <p className="fs-5 font-italic m-3"><em> Description:</em></p>
+                <p className="text-capitalize "> <b>  {short.snippet.description} </b> </p>
                 <Embed
                   id={short.id.videoId}
                   source="youtube"
