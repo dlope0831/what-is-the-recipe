@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 import { Image, Grid, Embed } from "semantic-ui-react"
-
+import dessert from "../../assets/dessert.jpg"
 import asian from "../../assets/asian.jpg"
 import caribbean from "../../assets/caribbean.jpg"
 import indian from "../../assets/indian.jpg"
@@ -36,7 +36,7 @@ function Main() {
 
   return (
     <>
-      <Grid text="true" style={{ padding: "55px" }} doubling columns={5} stackable>
+      <Grid text="true" style={{ padding: "55px" }} doubling columns={3} stackable>
         <Grid.Row >
           <Grid.Column>
             <Image
@@ -113,6 +113,22 @@ function Main() {
               }}
               alt="caribbean"
               src={caribbean}
+              size="medium"
+              rounded
+              onClick={handleClick}
+            />
+          </Grid.Column>
+          <Grid.Column>
+            <Image
+              label={{
+                size: "medium",
+                color: "pink",
+                content: "Dessert",
+                icon: "utensils",
+                ribbon: true,
+              }}
+              alt="dessert"
+              src={dessert}
               size="medium"
               rounded
               onClick={handleClick}
