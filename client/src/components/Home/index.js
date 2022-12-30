@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 import { Image, Grid, Embed } from "semantic-ui-react"
-
+import dessert from "../../assets/dessert.jpg"
 import asian from "../../assets/asian.jpg"
 import caribbean from "../../assets/caribbean.jpg"
 import indian from "../../assets/indian.jpg"
@@ -36,7 +36,7 @@ function Main() {
 
   return (
     <>
-      <Grid text="true" style={{ padding: "55px" }} doubling columns={5} stackable>
+      <Grid text="true" style={{ padding: "55px" }} doubling columns={3} stackable>
         <Grid.Row >
           <Grid.Column>
             <Image
@@ -118,21 +118,34 @@ function Main() {
               onClick={handleClick}
             />
           </Grid.Column>
+          <Grid.Column>
+            <Image
+              label={{
+                size: "medium",
+                color: "pink",
+                content: "Dessert",
+                icon: "utensils",
+                ribbon: true,
+              }}
+              alt="dessert"
+              src={dessert}
+              size="medium"
+              rounded
+              onClick={handleClick}
+            />
+          </Grid.Column>
         </Grid.Row>
       </Grid>
-      <Grid style={{ padding: "55px" }} columns={3} className="topVids" stackable textAlign="center">
+      <Grid style={{ padding: "50px" }} columns={2} className="topVids" stackable textAlign="center">
       <Grid.Row>
         <Grid.Column>
           {recipeData.map((short, i) => {
             return (
               <div key={i}>
-                Title:
-                <br />
+         <p className="fs-3 m-2 bg-success text-light rounded-top">Title </p>
                 <strong> {short.snippet.title} </strong>
-                <br />
-                Description:
-                <br />
-                {short.snippet.description}
+                <p className="fs-5 font-italic m-3"><em> Description:</em></p>
+                <p className="text-capitalize "> <b>  {short.snippet.description} </b> </p>
                 <Embed
                   id={short.id.videoId}
                   source="youtube"

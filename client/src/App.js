@@ -18,7 +18,7 @@ import SearchRecipes from "./pages/SearchRecipes"
 // import { StoreProvider } from "./utils/GlobalState";
 import "bootstrap/dist/css/bootstrap.min.css"
 // import Recipes from "./pages/Recipes"
-// import Saved from "./pages/SavedRecipes"
+
 // import AppTest from './test';
 
 const httpLink = createHttpLink({
@@ -53,7 +53,7 @@ function App() {
             {/* <Route path="/donate" element={<Donation />} /> */}
             {/* <Route path="/recipes" element={<Recipes />} /> */}
             {/* <Route exact path='/' component={<SearchRecipes />} /> */}
-            {/* <Route path="/savedrecipes" element={<Saved />} /> */}
+
             <Route path="/recipes" element={<SearchRecipes />} />
           </Routes>
         </div>
