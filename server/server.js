@@ -1,6 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 const { typeDefs, resolvers } = require("./schemas");
@@ -27,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // app.use(routes);
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
 app.get('/api/shorts/:q', (req, res) => {
