@@ -16,7 +16,7 @@ import Auth from "../utils/auth"
             <Nav className="me-auto ">
               <Nav.Link as={Link} to="/"> Home</Nav.Link>
               <Nav.Link as={Link} to="/recipes">Recipes</Nav.Link>
-              <Nav.Link as={Link} to="/savedrecipes">Saved</Nav.Link>
+              <Nav.Link as={Link} to="/Savedrecipes">Saved</Nav.Link>
               <Button className="m-2" variant="light"  href="/" onClick={() => Auth.logout()}>
               Logout
             </Button>
