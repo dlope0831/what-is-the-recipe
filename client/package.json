@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "./",
   "proxy": "http://localhost:3001",
-  "homepage": "./",
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "@emotion/react": "^11.10.5",
