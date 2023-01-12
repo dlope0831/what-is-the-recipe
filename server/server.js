@@ -41,11 +41,6 @@ app.get('/api/shorts/:q', (req, res) => {
   })
 })
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'))
-})
-
-
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
