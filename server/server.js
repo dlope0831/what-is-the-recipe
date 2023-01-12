@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // app.use(routes);
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
 app.get('/api/shorts/:q', (req, res) => {
@@ -40,6 +40,7 @@ app.get('/api/shorts/:q', (req, res) => {
     res.status(500).json(error)
   })
 })
+
 
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
